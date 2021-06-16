@@ -4,9 +4,18 @@ namespace MaximumOfThreeVariables
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Welcome to Maximum Of 3 Variables");
+            Console.WriteLine("----Welcome to Maximum Of 3 Variables----");
+            MaxNumber max = new MaxNumber();
+            int maxNumber = max.MaxInteger(10, 8, 9);
+            Console.WriteLine(maxNumber + " is maximum");
+
+            int maxNumberTwo = max.MaxInteger(540, 692, 436);
+            Console.WriteLine(maxNumberTwo + " is maximum");
+
+            int maxNumberThree = max.MaxInteger(540, 692, 911);
+            Console.WriteLine(maxNumberThree + " is maximum");
         }
     }
 }
