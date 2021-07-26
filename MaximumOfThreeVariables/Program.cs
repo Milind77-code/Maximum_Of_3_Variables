@@ -6,9 +6,11 @@ namespace MaximumOfThreeVariables
     {
         static void Main()
         {
-            Console.WriteLine("----Welcome to Maximum Of 3 Variables----");
+            Console.WriteLine("<----Welcome to Maximum Of 3 Variables---->");
+           
             // Creating object
             MaxNumber max = new MaxNumber();
+            
             int[] intArray = { 1, 45, 69, 33, 26 };
             max.MaxValue<int>(intArray);
 
