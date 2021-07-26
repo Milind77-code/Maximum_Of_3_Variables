@@ -6,35 +6,22 @@ namespace MaximumOfThreeVariables
 {
     public class MaxNumber
     {
-        public int MaxInteger(int firstNumber, int secondNumber, int thirdNumber)
+        dynamic temp;
+        public void MaxValue<T>(T[] array) where T : IComparable
         {
-            if ((firstNumber.CompareTo(secondNumber) > 0) && (firstNumber.CompareTo(thirdNumber) > 0))
-                return firstNumber;
-            if ((secondNumber.CompareTo(firstNumber) > 0) && (secondNumber.CompareTo(thirdNumber) > 0))
-                return secondNumber;
-            if ((thirdNumber.CompareTo(firstNumber) > 0) && (thirdNumber.CompareTo(secondNumber) > 0))
-                return thirdNumber;
-            return 0;
-        }
-        public float MaxFloat(float firstNumber, float secondNumber, float thirdNumber)
-        {
-            if ((firstNumber.CompareTo(secondNumber) > 0) && (firstNumber.CompareTo(thirdNumber) > 0))
-                return firstNumber;
-            if ((secondNumber.CompareTo(firstNumber) > 0) && (secondNumber.CompareTo(thirdNumber) > 0))
-                return secondNumber;
-            if ((thirdNumber.CompareTo(firstNumber) > 0) && (thirdNumber.CompareTo(secondNumber) > 0))
-                return thirdNumber;
-            return 0;
-        }
-        public string Maxstring(string firstWord, string secondWord, string thirdWord)
-        {
-            if ((firstWord.CompareTo(secondWord) > 0) && (firstWord.CompareTo(thirdWord) > 0))
-                return firstWord;
-            if ((secondWord.CompareTo(firstWord) > 0) && (secondWord.CompareTo(thirdWord) > 0))
-                return secondWord;
-            if ((thirdWord.CompareTo(firstWord) > 0) && (thirdWord.CompareTo(secondWord) > 0))
-                return thirdWord;
-            return null;
+            for (int i = 0; i < array.Length - 1; i++) // For number of passes
+            {
+                for (int j = 0; j < array.Length - 1 - i; j++)
+                {
+                    if (array[j].CompareTo(array[j + 1]) > 0)
+                    {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Maximum is :- " + array[array.Length - 1]);
         }
     }
 }
